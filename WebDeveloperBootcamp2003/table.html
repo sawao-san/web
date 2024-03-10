@@ -13,6 +13,8 @@
     </header>
     <main>
         <h1>HTMLフォームとテーブル</h1>
+
+        <h2>テーブル</h2>
         <h3>テーブル要素について</h3>
         <p>
             以下の用にたくさんのテーブル要素が存在する
@@ -30,33 +32,73 @@
         </p>
 
 
-        <h3>サンプル</h3>
+        <h3>サンプル1：一般的な表</h3>
         <table>
-            <tr>
-                <th>学習項目</th>
-                <th>方法</th>
-                <th>いつまで</th>
-            </tr>
-            <tr>
-                <td>HTMLの学習</td>
-                <td>Bootcampの動画を見て勉強する</td>
-                <td>3/10まで</td>
-            </tr>
-            <tr>
-                <td>CSSの勉強をする</td>
-                <td>Bootcampの動画を見て勉強する</td>
-                <td>3/15まで</td>
-            </tr>
-            <tr>
-                <td>Javascriptの勉強をする</td>
-                <td>Bootcampの動画を見て簡単なアプリを作ってみる</td>
-                <td>3/31まで</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>学習項目</th>
+                    <th>方法</th>
+                    <th>いつまで</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTMLの学習</td>
+                    <td>Bootcampの動画を見て勉強する</td>
+                    <td>3/10まで</td>
+                </tr>
+                <tr>
+                    <td>CSSの勉強をする</td>
+                    <td>Bootcampの動画を見て勉強する</td>
+                    <td>3/15まで</td>
+                </tr>
+                <tr>
+                    <td>Javascriptの勉強をする</td>
+                    <td>Bootcampの動画を見て簡単なアプリを作ってみる</td>
+                    <td>3/31まで</td>
+                </tr>
+            </tbody>
         </table>
 
+        <h3>サンプル2:ヘッダを一部二行にする場合</h3>
+        <table>
+            <thead>
+
+                <tr>
+                    <th rowspan="2">作りたい料理</th>
+                    <th colspan="2">作れる人</th>
+                    <th rowspan="2">簡単さ</th>
+                </tr>
+                <tr>
+                    <th>妻</th>
+                    <th>夫</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>生姜焼き</td>
+                    <td>×</td>
+                    <td>〇</td>
+                    <td>夫が作り方をすべて覚えている</td>
+                </tr>
+                <tr>
+                    <td>ハンバーグ</td>
+                    <td>×</td>
+                    <td>〇</td>
+                    <td>夫が作り方をすべて覚えている</td>
+                </tr>
+                <tr>
+                    <td>切り干し大根</td>
+                    <td>〇</td>
+                    <td>×</td>
+                    <td>妻が作ってくれる</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>フォーム</h2>
 
 
-        <h2></h2>
     </main>
 </body>
 
