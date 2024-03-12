@@ -13,10 +13,295 @@
     </header>
     <main>
         <h1>フォームについて</h1>
+        <hr>
+        <section>
+            <h2>input</h2>
 
-        <h2>アクション</h2>
-        <h2></h2>
-        <h2></h2>
+            <h3>type属性</h3>
+
+            <p>
+                input要素にはいくつも型があるので、以下のサイトで確認するといい
+                <a
+                    href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/input">https://developer.mozilla.org/ja/docs/Web/HTML/Element/input</a>
+            </p>
+
+            <form action="/tacos">
+                <input type="text">
+                <input type="password">
+                <input type="color">
+                <input type="number">
+            </form>
+
+            <h3>placeholder属性</h3>
+            <p>
+                placeholder属性は、見本みたいなこと。
+                以下のような表示をすることができる
+            </p>
+            <input type="text" placeholder="test">
+        </section>
+        <hr>
+        <section>
+            <h2>label</h2>
+            <p>
+                文字を表示するだけかと思いきや、for属性を使用し、関連するInputのIDを指定すると、
+                ラベルをクリックしたときに、関連するInputにカーソルが行くようになる
+
+                <br>
+                以下が、書き方
+
+            </p>
+            <div>
+                <code>
+                    &lt;label for="username"&gt;ユーザー名&lt;/label&gt;
+                    <br>
+                    &lt;input id="username" type="text"&gt; 
+                </code>
+            </div>
+            <br>
+
+
+            <div>
+                <label for="username1">ユーザー名</label>
+                <input id="username1" type="text">
+
+            </div>
+        </section>
+        <hr>
+
+
+        <section>
+            <h2>button</h2>
+            <p>
+                buttonはformタグの中にあり、特に指定していなければ
+                入力した情報をformのaction属性で指定した先に送信するということを行う
+            </p>
+
+            <h3>サンプル1</h3>
+
+            <form action="/tacos">
+                <div>
+                    <label for="username2">ユーザー名</label>
+                    <input id="username2" type="text">
+                </div>
+                <div>
+                    <label for="password">パスワード</label>
+                    <input id="password" type="password">
+                </div>
+                <div>
+                    <label for="color">好きな色</label>
+                    <input id="color" type="color">
+                </div>
+                <div>
+                    <label for="number">好きな数</label>
+                    <input id="number" type="number">
+                </div>
+                <button type=>送信</button>
+            </form>
+
+            <h3>button/submit属性</h3>
+
+            <p>
+            <ul>
+                <li>&lt;button type="button"&gt;:action属性で指定した先に送信されなくなる</li>
+                <li>&lt;button type="submit"&gt;:action属性で指定した先に送信される。書かなくても送信されるが、あえて書くことでわかりやすくする</li>
+            </ul>
+            </p>
+
+            <h3>name属性</h3>
+            <p>
+                これ各inputで入力することで、formのアクションと合わせてURLが作られるようになる
+            </p>
+
+            <h3>サンプル2</h3>
+            <form action="/tacos">
+                <div>
+                    <label for="username3">ユーザー名</label>
+                    <input id="username3" type="text" name="username">
+                </div>
+                <div>
+                    <label for="password2">パスワード</label>
+                    <input id="password2" type="password" name="password">
+                </div>
+                <div>
+                    <label for="color2">好きな色</label>
+                    <input id="color2" type="color" name="color">
+                </div>
+                <div>
+                    <label for="number2">好きな数</label>
+                    <input id="number2" type="number" name="number">
+                </div>
+                <button type=>送信</button>
+            </form>
+
+            <p>
+                仮に以下のように入力して、サンプル2で送信をしてみる
+            <div>
+                <img src="pictures/NameAttributeTest.png" alt="">
+            </div>
+
+            するとURLには以下のように表示される
+            </p>
+            <p>
+                file:///C:/tacos?username=test&password=test&color=%23531d1d&number=1
+            </p>
+
+            <p>
+                この状態ではパスワードは隠されずサーバーに要求されることがわかる。
+                どうすればいいんだろう
+            </p>
+
+        </section>
+
+        <hr>
+        <section>
+            <h2>Inputを利用した遊び</h2>
+            <p>
+                googleやyoutube等もinputのname属性でqを指定して、検索をしているので、以下のようにGoogle検索を自分でできるようになる
+            </p>
+
+            <h3>Google検索</h3>
+            <form action="https://www.google.co.jp/search">
+                <label for="searchGoogle">Google</label>
+                <input id="searchGoogle" type="text" name="q" placeholder="検索する文字列を入力">
+                <button>検索</button>
+            </form>
+
+            <h3>Youtube検索</h3>
+            <form action="https://www.youtube.com/results">
+                <label for="searchYoutube">Youtube</label>
+                <input id="searchYoutube" type="text" name="search_query" placeholder="検索する文字列を入力">
+                <button>検索</button>
+            </form>
+
+            <h3>Amazon検索</h3>
+            <form action="https://www.amazon.co.jp/s">
+                <label for="searchAmazon">Amazon</label>
+                <input id="searchAmazon" type="text" name="k" placeholder="検索する文字列を入力">
+                <button>検索</button>
+            </form>
+
+            <hr>
+        </section>
+
+        <section>
+            <h2>チェックボックスとラジオボタンとセレクト</h2>
+
+            <h3>checkboxのサンプル</h3>
+
+            <form action="/birds">
+                <div>
+                    <input type="checkbox" name="agree_test" id="agree">
+                    <label for="agree">利用規約に同意します。</label>
+                </div>
+                <div>
+                    <button>送信</button>
+                </div>
+            </form>
+            <p>
+                チェックボックスのname属性がagree_testとした場合、チェックを入れて送信するとactionで指定されたURLの後ろに
+                ?agree_test=onが追加されるようになる
+            </p>
+            <hr>
+
+            <h3>radiobuttonのサンプル</h3>
+            <form action="/birds">
+                <label for="">XS:</label>
+                <input type="radio" name="size" id="xs" value="xs">
+                <label for="">S:</label>
+                <input type="radio" name="size" id="s" value="s">
+                <label for="">M:</label>
+                <input type="radio" name="size" id="m" value="m">
+                <p>
+                    <button>送信</button>
+                </p>
+
+            </form>
+            <p>
+                ラジオボタンはそれぞれに値を設定しておき、選んだ状態で送信をすると値がURLに含まれるようにする
+            </p>
+
+            <h3>selectのサンプル</h3>
+            <form action="birds">
+                <label for="meal">食事を選択してください</label>
+                <select name="meal" id="meal">
+                    <option value="meat">肉</option>
+                    <option value="fish">魚</option>
+                    <option value="egg" selected>卵</option>
+                    <option value="vegitable" selected>野菜</option>
+                </select>
+                <p>
+                    <button>送信</button>
+                </p>
+            </form>
+
+            <p>
+                selectedは属性をつけることで、初期の値を決めることができる。
+                <br>
+                ちなみに二つ以上selected属性がついている場合は、最後にselectedが書かれているオプションが初期値になるっぽい
+            </p>
+
+        </section>
+        <hr>
+
+        <section>
+            <h2>その他のinputのタイプ</h2>
+            <p>
+                きりがないので、必要に応じて、
+                <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/input">MDN</a>
+                から調べて使っていくこと
+            </p>
+            <h3>rangeのサンプル</h3>
+            <form action="/birds">
+                <label for="cheese">チーズの量</label>
+                <input type="range" name="cheese_level" id="cheese" min="1" max="100" step="7" value="75">
+                <p>
+                    <button>送信</button>
+                </p>
+
+            </form>
+            <p>
+                stepは数字の増減する最小単位
+                <br>
+                min, maxは数値を入力するためのInputタイプでは設定できるので覚えておくこと
+            </p>
+
+            <h3>textareaのサンプル</h3>
+            <form action="birds">
+                <textarea name="memo" id="memo" cols="30" rows="10" placeholder="コメントを入力してください"></textarea>
+                <p>
+                    <button>送信</button>
+                </p>
+            </form>
+        </section>
+
+        <section>
+            <h2>バリデーション</h2>
+            <p>
+                基本的にサーバー側・クライアント側でバリデーションを実施する必要がある
+                <br>
+                サーバー側でバリデーションする理由としては、クライアント側がブラウザを通さずにリクエストを行う可能性があるから。
+                <br>
+                クライアント側でバリデーションするのは、ユーザーが入力しやすくするため
+            </p>
+            <h3>バリデーションサンプル</h3>
+            <form action="/dummy">
+                <div>
+                    <label for="first">名前：</label>
+                    <input type="text" name="first" id="first" required>
+                </div>
+                <div>
+                    <label for="second">ユーザー名：</label>
+                    <input type="text" name="username" id="username" minlength="5" maxlength="20">
+                </div>
+                <div>
+                    <input type="email" name="mail_address" id="">
+                </div>
+                <div>
+                    <button>送信</button>
+                </div>
+            </form>
+        </section>
+
     </main>
     <footer>
 
