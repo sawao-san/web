@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS入門</title>
+    <link rel="stylesheet" href="HelloWorld.css">
+    <!-- この書き方もファイル間で共有されないから非推奨 -->
+    <!-- <style>
+        h2 {
+            color: brown;
+        }
+    </style> -->
+</head>
+
+<body>
+    <!-- インラインスタイル：非推奨 -->
+    <!-- <h1 style="color:purple">Hello World</h1> -->
+    <h1>タイトル</h1>
+
+    <section>
+        <h2>色変更テスト</h2>
+
+        <button style="background-color: palegreen;">送信</button>
+        <button>送信</button>
+    </section>
+
+
+    <section>
+        <h2>線の打ち消しのテスト</h2>
+
+        <p>
+            こちらが<a href="https://www.google.co.jp/">google</a>
+            のリンクです。
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae eligendi vitae blanditiis enim. Mollitia
+            porro
+            amet dolorem quae ipsa nihil dolores adipisci debitis ullam reprehenderit sequi omnis sed, fuga modi.
+        </p>
+    </section>
+
+    <section>
+        <h2>高さの変更テスト</h2>
+        <p class="heightTest">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius optio dolores culpa delectus sint odio illum
+            dicta
+            nisi. Aperiam mollitia quidem neque natus? Ipsum esse labore dignissimos qui corporis quia!
+        </p>
+    </section>
+
+
+    <section>
+        <h2>letter-spacingテスト</h2>
+        <h1 class="lsTest">タイトル</h1>
+    </section>
+
+    <section>
+        <h2>font-sizeのテスト</h2>
+        <p class="fontSizeTest">
+            px:最も使われる絶対単位・
+            レスポンシブなウェブサイトでは非推奨
+
+        </p>
+
+    </section>
+
+
+
+    <section>
+        <h2>IDセレクタテスト</h2>
+        <p>
+            <label for="userid">User ID</label>
+            <input type="text" name="userid" id="userid">
+            <button id="signup">Log in</button>
+        </p>
+    </section>
+
+
+
+    <section>
+        <h2>クラスセレクタ　テスト</h2>
+        <p>
+        <ul>
+            <li>クラスを使えば、IDとは違って、複数の要素に対して目印をつけることができる。<span class="tag">メモ</span></li>
+            <li>クラスを指定するときには、以下のように記載する<span class="tag">説明</span></li>
+        </ul>
+        <pre>
+                <code>
+                    .class {
+                        attribute: value;
+                    }
+                </code>
+            </pre>
+        </p>
+    </section>
+
+
+    <section class="offspring">
+        <h2>子孫セレクタ　テスト</h2>
+        <p>
+            以下の一行の中で、span要素に囲まれている方だけを赤く表示してみる
+            <br>
+            <span><a href="#">こちらはspanの中</a></span>
+            <a href="#">こちらはspanの外</a>
+        </p>
+    </section>
+
+    <section>
+        <h2>隣接セレクタテスト</h2>
+        <p>
+            例えば最後のpタグだけを色変更できるか試してみる
+        </p>
+        <p>
+            これはpタグです
+        </p>
+        <p class="neighbor">
+            これはpタグです（neighborクラス付き）
+        </p>
+        <p>
+            これはpタグです
+        </p>
+    </section>
+
+    <section>
+        <h2>直下セレクタ</h2>
+        <p>
+            一階層目だけ文字の色を紫にしてみよう
+        <ul class="under">
+            <li>一階層</li>
+            <ul>
+                <li>二階層</li>
+                <li>二階層</li>
+                <li>二階層</li>
+            </ul>
+            <li>一階層</li>
+            <li>一階層</li>
+        </ul>
+        </p>
+    </section>
+
+    <section>
+        <h2>属性セレクタ</h2>
+        <p>
+            以下のinput要素のうちnumber属性を持つだけ色を変えてみよう
+        </p>
+        <input type="text">
+        <input type="number">
+        <input type="datetime">
+        <br>
+
+        以下のようにaタグの中のhref属性の中のワードを指定することもできる。以下はgoogleというワードが入っているかどうかで色を変えている
+        <div>
+            <a href="https://www.google.co.jp">googleリンク</a>
+        </div>
+        <div>
+            <a href="https://www.amazon.co.jp">amazonリンク</a>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
