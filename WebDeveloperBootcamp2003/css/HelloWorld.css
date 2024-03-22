@@ -2,7 +2,7 @@ h1 {
     color: rgba(0, 0, 255, 0.745);
     text-align: center;
     font-weight: 700;
-    text-decoration: rgb(255, 0, 0) underline wavy;
+    /* text-decoration: rgb(255, 0, 0) underline wavy; */
 
 }
 
@@ -67,4 +67,81 @@ input[type="number"] {
 
 a[href*=google] {
     color: red;
+}
+
+button:hover {
+    background-color: red;
+    color: white;
+}
+
+button:active {
+    background-color: aqua;
+    color: black;
+}
+
+input[type="radio"]:checked {
+    box-shadow: 0 0 0 3px orange;
+}
+
+input[type="radio"]:checked+label {
+    color: orange;
+}
+
+input[type="checkbox"]:checked {
+    box-shadow: 0 0 0 3px red;
+}
+
+section {
+    box-shadow: inset;
+}
+
+.card {
+    background-color: whitesmoke;
+    width: 288px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 10px 0px rgb(19, 128, 196);
+}
+
+
+.card-img>img {
+    width: 280px;
+    margin: 4px;
+}
+
+.card-title {
+    text-align: center;
+    background-color: rgb(11, 77, 90);
+    width: 290px;
+    color: white;
+}
+
+.notTest .card:nth-of-type(2n) {
+    background-color: rgb(241, 241, 156);
+}
+
+.first-letter-test li::first-letter {
+    font-size: 20px;
+    font-weight: bold;
+    color: tomato;
+}
+
+.first-line-test p::first-line {
+    color: purple
+}
+
+p::selection {
+    background-color: yellow;
+}
+
+.card-title h3 {
+    text-decoration: none;
+}
+
+h3 {
+    text-decoration: underline;
 }
