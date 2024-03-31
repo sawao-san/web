@@ -1,0 +1,12 @@
+body {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+section {
+    width: 80%;
+    margin: 0 auto
+}
+
+h1 {
+    font-weight: 800;
+}

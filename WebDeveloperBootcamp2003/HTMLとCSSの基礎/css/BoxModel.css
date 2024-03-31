@@ -1,0 +1,173 @@
+/* 以下のサイトを参考にした
+https://ics.media/entry/200317/ */
+body {
+    font-family: "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
+    margin: 0 0 0 0;
+    ;
+}
+
+p::selection {
+    background-color: #e9c46a;
+}
+
+h1 {
+    text-align: center;
+    background-color: #264653;
+    color: white;
+    font-weight: 700;
+    margin: 0 0 0 0;
+}
+
+h2 {
+    background-color: #2a9d8f;
+    color: aliceblue;
+    padding-left: 20px;
+}
+
+hr {
+    color: red;
+}
+
+.whTest {
+    width: 200px;
+    height: 300px;
+}
+
+
+#one {
+    width: 300px;
+    height: 300px;
+    background-color: #e76f51;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+#two {
+    width: 300px;
+    height: 300px;
+    background-color: #f4a261;
+    border: dashed #264653;
+    box-sizing: border-box;
+}
+
+#three {
+    width: 300px;
+    height: 300px;
+    background-color: #e9c46a;
+    border: #d62828 5px;
+    border-style: outset;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.paddingTest h2 {
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+#p-one {
+    /* 上下｜左右 */
+    padding: 10px 20px;
+}
+
+#p-two {
+    /* 上｜左右｜下 */
+    padding: 10px 30px 3px;
+}
+
+#p-three {
+    /* 上｜右｜下｜左 */
+    margin: 10px 20px 30px 40px;
+}
+
+
+.marginTest h2 {
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+#m-one {
+    /* 上下｜左右 */
+    margin: 10px 20px;
+}
+
+#m-two {
+    /* 上｜左右｜下 */
+    margin: 10px 30px 3px;
+}
+
+#m-three {
+    /* 上｜右｜下｜左 */
+    margin: 10px 20px 30px 40px;
+}
+
+
+/* 以下Displayプロパティのテスト */
+.card {
+    width: 300px;
+    height: auto;
+    border: #264653 1px;
+    border-style: outset;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 0;
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px 0 #f29808;
+    animation: pulse 5s infinite;
+}
+
+.card-title {
+    letter-spacing: 4px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card-img img {
+    width: 290px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.card-img {
+    text-align: center;
+}
+
+section {
+    box-shadow: 0 0 5px 0 #264653;
+}
+
+section p {
+    padding: 10px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 hsla(57, 73%, 38%, 0.702);
+    }
+
+    70% {
+        transform: scale(1.0);
+        box-shadow: 0 0 0 10px rgba(215, 18, 18, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(211, 9, 9, 0);
+    }
+}

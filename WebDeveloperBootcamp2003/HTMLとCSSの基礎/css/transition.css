@@ -1,0 +1,86 @@
+#notTransition {
+    height: 100px;
+    width: 100px;
+    background-color: magenta;
+    box-shadow: 0 0 10px 0;
+    display: inline-block;
+}
+
+#notTransition:hover {
+    background-color: cyan;
+    border-radius: 50%;
+}
+
+#transitionTest {
+    height: 100px;
+    width: 100px;
+    background-color: magenta;
+    box-shadow: 0 0 10px 0;
+    display: inline-block;
+    transition: 2s;
+}
+
+#transitionTest:hover {
+    background-color: cyan;
+    border-radius: 50%;
+}
+
+#property-trans {
+    height: 100px;
+    width: 100px;
+    background-color: magenta;
+    box-shadow: 0 0 10px 0;
+    display: inline-block;
+    transition: border-radius 2s;
+}
+
+#property-trans:hover {
+    background-color: cyan;
+    border-radius: 50%;
+}
+
+#delay-trans {
+    height: 100px;
+    width: 100px;
+    background-color: magenta;
+    box-shadow: 0 0 10px 0;
+    display: inline-block;
+    left: 0px;
+    transition: border-radius 2s 1s, left 2s 1s;
+}
+
+#delay-trans:hover {
+    background-color: cyan;
+    border-radius: 50%;
+    position: relative;
+    left: 50px;
+}
+
+.timing-function-test div {
+    height: 100px;
+    width: 100px;
+    background-color: magenta;
+    box-shadow: 0 0 10px 0;
+    margin: 20px 0;
+    transition: margin-left 3s;
+}
+
+.timing-function-test:hover div {
+    margin-left: 500px;
+}
+
+.timing-function-test div:nth-of-type(1) {
+    transition-timing-function: ease-in;
+}
+
+.timing-function-test div:nth-of-type(2) {
+    transition-timing-function: ease-out;
+}
+
+.timing-function-test div:nth-of-type(3) {
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.timing-function-test div:nth-of-type(4) {
+    transition-timing-function: ease-in-out
+}

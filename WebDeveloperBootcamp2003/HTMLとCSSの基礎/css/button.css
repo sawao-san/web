@@ -1,0 +1,39 @@
+button[class*="simple-button"] {
+    border: 4px solid;
+    padding: 0.5rem 2rem;
+    background: none;
+    font-size: large;
+    border-radius: 0.5rem;
+    font-family: 'Roboto' sans-serif;
+    transition: backgroud-color 0.5s, color 0.5s, transform 0.5s, box-shadow 0.5s;
+    font-weight: bold;
+    margin: 1rem;
+}
+
+button[class*="simple-button"]:hover {
+    transform: translateY(-0.25em) scale(1.1);
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 3px 2px -0.5px #8d99ae;
+}
+
+button[class*="simple-button-red"] {
+    border-color: #d90429;
+    color: #d90429;
+}
+
+button[class*="simple-button-red"]:hover {
+    background-color: #d90429;
+    color: #edf2f4;
+}
+
+button[class*="simple-button-red"]:active {
+    background-color: #2b2d42;
+    border-color: #8d99ae;
+}
+
+
+#dark {
+    background-color: #151b29;
+
+}
