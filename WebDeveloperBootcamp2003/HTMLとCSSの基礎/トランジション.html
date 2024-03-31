@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transition.css">
+    <title>トランジション</title>
+</head>
+
+<body>
+    <main>
+        <h1>トランジション</h1>
+        <section>
+            <h2>シンプルなトランジションを試してみる</h2>
+            <p>
+                左がトランジションなし、右があり
+            </p>
+            <section>
+                <div id="notTransition"></div>
+                <div id="transitionTest"></div>
+            </section>
+            <p>
+                この章では、以下を学んでいく
+            <ul>
+                <li>Propety name</li>
+                <li>Duration</li>
+                <li>Timing function</li>
+                <li>Delay</li>
+            </ul>
+
+            </p>
+            <h3>Propetyを指定して遅らせる</h3>
+            <p>
+                以下はborder-radiusに対してのみtransitionをつけているので、色はtransitionされない
+            </p>
+            <div id="property-trans"></div>
+
+            <h3>Delay</h3>
+            <p>
+                上述の検証と同様に、以下はborder-radiusに対してのみtransitionをつけているので、色はtransitionされない
+                <br>
+                ただし、1秒待ってから変化が始まる
+            </p>
+            <div id="delay-trans"></div>
+
+            <h3>Timing function</h3>
+            <p>
+                上述の検証と同様に、以下はborder-radiusに対してのみtransitionをつけているので、色はtransitionされない
+                <br>
+                ただし、1秒待ってから変化が始まる
+            </p>
+            <section class="timing-function-test">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+            </section>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

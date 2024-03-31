@@ -1,0 +1,66 @@
+#rgb {
+    background-color: magenta;
+    width: 26rem;
+    height: 26rem;
+}
+
+#rgba {
+    width: 13rem;
+    height: 13rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* border-radius: 10rem 0; */
+}
+
+
+#opacity {
+    background-color: yellow;
+    width: 13rem;
+    height: 13rem;
+    opacity: 0.5;
+}
+
+#positionTest div {
+    width: 100px;
+    height: 100px;
+    background-color: #3d405b;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+
+}
+
+#positionTest .middle {
+    background-color: #81b29a;
+}
+
+#positionTest #static .middle {
+    position: static;
+}
+
+#positionTest #relative .middle {
+    position: relative;
+    left: 300px;
+}
+
+
+
+#positionTest #absolute .middle {
+    position: absolute;
+    /* top: 50px; */
+    left: 200px;
+}
+
+/* #positionTest #absolute{
+    position: relative;
+} */
+
+#positionTest #fixed .middle {
+    position: fixed;
+    top: 100px;
+    right: 0px;
+}
+
+
+section>section {
+    box-shadow: none;
+}

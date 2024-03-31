@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/PropertyTest.css">
+    <title>不当明度とポジション</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <h1>不当明度とポジション</h1>
+        <section>
+            <h2>不当明度の設定</h2>
+
+            <h3>RGBAによる不当明度の設定</h3>
+            <p>
+                以下のようにbackgroud-colorの背景色のrgbaを設定すれば透明度を設定することができる
+            </p>
+            <div id="rgb">
+                <div id="rgba">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam incidunt harum architecto nulla
+                    ipsam adipisci, consectetur perspiciatis asperiores molestiae exercitationem velit ratione quia.
+                    Debitis sed qui quasi excepturi ex enim?
+                </div>
+                <div id="opacity">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione excepturi enim rerum. Vero ex
+                    accusamus magnam, corporis fugiat tempore rerum veniam debitis temporibus sequi dignissimos quasi
+                    accusantium suscipit assumenda atque.
+                </div>
+            </div>
+            <h3>opacityによる不当明度の設定</h3>
+            <p>
+                以下のようにopacityを設定すれば、要素そのものの透明度を設定することもできる
+            </p>
+            <div id="opacity">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi impedit at sint nisi id voluptates harum
+                nostrum, quia perspiciatis. Consequuntur quasi ad asperiores saepe! Nesciunt consequuntur architecto
+                iusto quisquam unde.
+            </div>
+
+        </section>
+
+        <section id="positionTest">
+            <h2>positionについて</h2>
+            <p>
+                以下の色が塗られた領域を移動させてみましょう
+            </p>
+
+            <h3>Static</h3>
+            <section id="static">
+                <div></div>
+                <div class="middle"></div>
+                <div></div>
+            </section>
+
+            <h3>Relative</h3>
+            <p>
+                これは、TopやLeftなどの方向を指定すると、その方向に空間が作成される
+            </p>
+            <section id="relative">
+                <div></div>
+                <div class="middle"></div>
+                <div></div>
+            </section>
+            <h3>Absolute</h3>
+            <p>
+                親要素かもしくはその親、もしくは祖先の要素にPositionが設定されて入れば、その要素からの相対位置を指定する
+                <br>
+                祖先の要素全てにPositionが設定されていなければ、bodyから見た相対位置が設定される
+                <br>
+                （一見変わりないように見えるが、top 50pxを指定するとページの最上部から50px下に配置される
+            </p>
+            <section id="absolute">
+                <div></div>
+                <div class="middle"></div>
+                <div></div>
+            </section>
+
+            <h3>Fixed</h3>
+            <p>
+                画面表示されている領域を基準にして、どこに配置するかを設定することができる
+                <br>
+                このページの画面右上にずっと表示されているのはそれが原因
+            </p>
+            <section id="fixed">
+                <div></div>
+                <div class="middle"></div>
+                <div></div>
+            </section>
+
+            <h3>Sticky</h3>
+            <p>
+                画面表示した際には、relativeと同じだが、画面をスクロールすると、画面の表示領域からどれぐらいの位置にあるかを設定することができるオプション
+                <br>
+                style.cssのh1に設定したので、タイトルがずっとへばりついて来ていると思う
+            </p>
+
+        </section>
+
+        <section>
+    </main>
+</body>
+
+</html>

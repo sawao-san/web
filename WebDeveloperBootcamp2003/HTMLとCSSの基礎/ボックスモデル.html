@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/BoxModel.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <h1>ボックスモデル</h1>
+        <section>
+            <h2>widthテスト</h2>
+            <div class="whTest">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloremque laboriosam
+                    necessitatibus
+                    numquam voluptatem exercitationem! Culpa repellat expedita ad velit quos excepturi voluptates quis,
+                    vero
+                    fuga mollitia obcaecati ea distinctio?</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <section class="borderTest">
+            <h2>Borderテスト</h2>
+            <p>
+                Borderを設定しようとすると、最低でも以下のプロパティは定義する必要がある
+            <ol>
+                <li>border-width : 枠線の幅（太さ）</li>
+                <li>border-color : 枠線の色</li>
+                <li>border-style : 枠線の見た目。実践ならsolid,点線ならdotted</li>
+            </ol>
+
+            <br>
+            仮に、枠線が設定された要素に先にWidthが設定されていて、枠線の太さを設定したときに
+            枠線の太さ分、幅が増えてしまうので、そういう場合は、以下のように記載する
+            <pre>
+                    <code>
+                        p {
+                            box-sizing: border-box;
+                        }
+                    </code>
+                </pre>
+
+            <p>
+                <a href="https://developer.mozilla.org/ja/docs/Web/CSS/border">border</a>
+                はプロパティが多い
+            </p>
+
+            </p>
+            <p id="one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloremque laboriosam
+                necessitatibus
+                numquam voluptatem exercitationem! Culpa repellat expedita ad velit quos excepturi voluptates quis, vero
+                fuga mollitia obcaecati ea distinctio?</p>
+
+            <p id="two">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloremque laboriosam
+                necessitatibus
+                numquam voluptatem exercitationem! Culpa repellat expedita ad velit quos excepturi voluptates quis, vero
+                fuga mollitia obcaecati ea distinctio?</p>
+
+            <p id="three">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloremque laboriosam
+                necessitatibus
+                numquam voluptatem exercitationem! Culpa repellat expedita ad velit quos excepturi voluptates quis, vero
+                fuga mollitia obcaecati ea distinctio?</p>
+            <hr>
+        </section>
+
+        <section class="paddingTest">
+            <h2>paddingテスト</h2>
+            <p>
+                paddingは要素の内側の領域
+            </p>
+
+            <div>
+                <button id="p-one">test</button>
+            </div>
+            <div>
+                <button id="p-two">test</button>
+            </div>
+            <div>
+                <button id="p-three">test</button>
+            </div>
+        </section>
+
+        <section class="marginTest">
+            <h2>marginテスト</h2>
+            <p>
+                marginは要素の外側の領域。
+                <br>
+
+                以下のボタンのスタイルには、paddingテストのスタイルで指定していた"padding"という文字をすべて"margin"と書き換えただけだが、こんなに違う
+            </p>
+
+            <div>
+                <button id="m-one">test</button>
+            </div>
+            <div>
+                <button id="m-two">test</button>
+            </div>
+            <div>
+                <button id="m-three">test</button>
+            </div>
+        </section>
+
+        <section class="displayTest">
+            <h2>displayテスト</h2>
+            <p>
+                ブロック要素に対して、以下のように設定すると、インラインのように見せてくれる
+            </p>
+            <pre>
+                    <code>
+                        display: inline
+                    </code>
+                </pre>
+
+            <p>
+                逆にインライン要素に対して、以下のように設定すると、ブロック要素のように見せてくれる
+            </p>
+            <p>
+                ただ、インライン要素はwidthとheightを無視し、上下に対するmarginやpaddingのスタイルが反映されないので、ブロック要素のdiv要素を横に並べると変になる。
+            </p>
+
+            <pre>
+                    <code>
+                        display: inline
+                    </code>
+                </pre>
+
+            <p>
+                そこで、以下のように書くことで、ブロック要素の性質をもったinline要素を作り出すことができる
+
+            </p>
+            <pre>
+                    <code>
+                        display: inline
+                    </code>
+             </pre>
+
+
+
+
+            <div class="card">
+                <div class="card-title">
+                    <h3>タイトル</h3>
+                </div>
+                <div class="card-img">
+                    <img src="pictures/おじさんとビール.jpg" alt="おじさんとビール">
+                </div>
+                <div class="card-discription">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatem dolores eos magnam
+                        accusamus, architecto excepturi unde adipisci pariatur ratione, fugit itaque minima aperiam
+                        iusto. Placeat ullam odio nulla molestiae?
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <h3>タイトル</h3>
+                </div>
+                <div class="card-img">
+                    <img src="pictures/おじさんとビール.jpg" alt="おじさんとビール">
+                </div>
+                <div class="card-discription">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatem dolores eos magnam
+                        accusamus, architecto excepturi unde adipisci pariatur ratione, fugit itaque minima aperiam
+                        iusto. Placeat ullam odio nulla molestiae?
+                    </p>
+                </div>
+
+            </div>
+
+
+            <p>
+                ちなみに
+                display:none
+                と記載すると、その要素を非表示にすることができる
+            </p>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
