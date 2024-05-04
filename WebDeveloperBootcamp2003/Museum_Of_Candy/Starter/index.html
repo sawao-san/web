@@ -21,18 +21,21 @@
 
 <body>
   <!-- ナビゲーションバー -->
-  <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-sm">
+  <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    <!-- brandって言葉も覚えよう -->
     <a href="#" class="navbar-brand">CANDY</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarItems"
-      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- ハンバーガーボタン -->
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle Navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarItems">
+    <!-- ハンバーガーメニューボタンで隠すリスト -->
+    <div id="navLinks" class="collapse navbar-collapse">
       <div class="navbar-nav">
-        <a class="nav-link" href="#">home</a>
-        <a class="nav-link" href="#">About</a>
-        <a class="nav-link" href="#">Tickets</a>
+        <a class="nav-item nav-link" href="#">home</a>
+        <a class="nav-item nav-link" href="#">About</a>
+        <a class="nav-item nav-link" href="#">Tickets</a>
       </div>
 
     </div>
@@ -41,7 +44,7 @@
   <!-- 一枚目の画像：手にドーナツを持っているやつ -->
   <section class="container-fluid px-0">
     <div class="row align-items-center">
-      <div class="col-lg-6">
+      <div id="headingGroup" class="col-lg-6 mt-5">
         <div class="text-center text-white d-none d-lg-block">
           <h2>MUSIUM<span>/</span>OF<span>/</span>CANDY</h2>
           <h2>MUSIUM<span>/</span>OF<span>/</span>CANDY</h2>
@@ -53,70 +56,85 @@
         </div>
       </div>
       <div class="col-lg-6">
-        <img src="imgs/hand2.png" alt="">
+        <img class="img-fluid" src="imgs/hand2.png" alt="">
       </div>
     </div>
 
   </section>
 
-  <section class="container-fluid px-0">
+  <section class="container-fluid px-0 text-white">
 
     <!-- 二枚目の画像：ミルク瓶に刺さったストローにお菓子が突き刺さっている画像 -->
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <img src="imgs/milk.png" alt="">
+    <div class="row text-center align-items-center content">
+      <div class="col-lg-6 order-2 order-lg-1">
+        <img class="img-fluid" src="imgs/milk.png" alt="">
       </div>
 
-      <div class="col-lg-6">
-        <div class="text-center text-white">
-          <h2>MUSIUM OF CANDY</h2>
-          <img id="icon" src="imgs/lolli_icon.png" alt="">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quis quidem numquam nostrum dolorem
-            asperiores! Commodi ipsa facilis ullam veritatis fugiat laborum neque in maxime quo enim. Dolorum,
-            dignissimos
-            error.
-          </p>
+      <div class="col-lg-6 order-1 order-lg-2 blurb mb-5 mb-lg-0">
+        <h2>MUSIUM OF CANDY</h2>
+        <img id="icon" class="d-none d-lg-inline" src="imgs/lolli_icon.png" alt="">
+
+        <div class="row justify-content-center">
+
+          <div class="col-10 col-lg-8">
+            <div class="text-center">
+              <p class="lead">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quis quidem numquam nostrum dolorem
+                asperiores! Commodi ipsa facilis ullam veritatis fugiat laborum neque in maxime quo enim. Dolorum,
+                dignissimos
+                error.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste doloribus mollitia porro laborum beatae
+                veritatis ipsam maiores ad corrupti ratione minus, alias aspernatur illo repellendus quidem ut
+                accusantium quasi voluptatibus.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
 
     <!-- 三枚目の画像：ガムのポールが出てくる機械の画像 -->
-    <div class="row aline-items-center">
+    <div class="row text-center aline-items-center content">
       <div class="col-lg-6">
-        <div class="text-center text-white">
+        <div class="text-center aline-items-center blurb mb-5 mb-lg-0">
           <h2>MUSIUM OF CANDY</h2>
-          <img id="icon" src="imgs/lolli_icon.png" alt="">
+          <img id="icon" class="d-none d-lg-inline" src="imgs/lolli_icon.png" alt="">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quis quidem numquam nostrum dolorem
             asperiores! Commodi ipsa facilis ullam veritatis fugiat laborum neque in maxime quo enim. Dolorum,
             dignissimos
             error.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iste! Excepturi nemo quia eveniet similique,
+            vitae delectus blanditiis. Eaque cum magni illum quas libero laborum officiis temporibus sit aperiam odio.
           </p>
         </div>
       </div>
       <div class="col-lg-6">
-        <img src="imgs/gumball.png" alt="">
+        <img class="img-fluid" src="imgs/gumball.png" alt="">
       </div>
 
     </div>
 
 
     <!-- 4枚目の画像：小さいお菓子が、グラスから飛び出している画像 -->
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <img src="imgs/sprinkles.png" alt="">
+    <div class="row text-center align-items-center content">
+      <div class="col-lg-6 order-2 order-lg-1">
+        <img class="img-fluid" src="imgs/sprinkles.png" alt="">
       </div>
-      <div class="col-lg-6">
-        <div class="text-center text-white">
+      <div class="col-lg-6 order-1 order-lg-2 blurb mb-5 mb-lg-0">
+        <div class="text-center">
           <h2>MUSIUM OF CANDY</h2>
-          <img id="icon" src="imgs/lolli_icon.png" alt="">
+          <img id="icon" class="d-none d-lg-inline" src="imgs/lolli_icon.png" alt="">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quis quidem numquam nostrum dolorem
             asperiores! Commodi ipsa facilis ullam veritatis fugiat laborum neque in maxime quo enim. Dolorum,
             dignissimos
             error.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates repellendus molestiae vitae consequatur
+            consequuntur at, accusamus debitis laudantium ad earum sint iste perspiciatis. Consequuntur corporis facere
+            aliquid maiores repudiandae porro!
+
           </p>
         </div>
       </div>
@@ -141,6 +159,15 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+
+  <script>
+    $(function () {
+      $(document).scroll(function () {
+        var $nav = $('#mainNavbar');
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+      })
+    })
+  </script>
 
 </body>
 
