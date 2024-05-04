@@ -1,0 +1,49 @@
+h1 {
+    text-align: center;
+    color: #3d348b;
+    font-weight: 700;
+}
+
+h2 {
+    color: #3d348b;
+    font-weight: 700;
+}
+
+h3 {
+    color: #3d348b;
+    font-weight: 700;
+}
+
+img {
+    box-shadow: 0 0 5px 0;
+}
+
+img:hover {
+    box-shadow: 0 0 10px 0 #e63946;
+    transform: translateY(-2px) scale(103%);
+}
+
+a {
+    color: #3a86ff;
+}
+
+p::selection,
+li::selection,
+code::selection,
+a::selection,
+h1::selection,
+h2::selection,
+h3::selection {
+    background-color: yellow;
+}
+
+section {
+    box-shadow: 0 0 10px 0;
+}
+
+
+
+.sq {
+    width: 100px;
+    height: 100px;
+}
