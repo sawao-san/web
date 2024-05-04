@@ -1,0 +1,61 @@
+body {
+    font-family: 'Noto Sans JP',
+        "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
+    margin: 0 0 0 0;
+}
+
+p::selection {
+    background-color: #e9c46a;
+}
+
+h1 {
+    text-align: center;
+    background-color: #2a9d8f;
+    color: white;
+    font-weight: 900;
+    margin: 0 0 0 0;
+    line-height: 3em;
+    position: sticky;
+    top: 0px;
+    letter-spacing: 0.3rem;
+    /* background: url(https://images.unsplash.com/photo-1711379618719-eabc1221d6d0?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) top/cover ; */
+}
+
+h2 {
+    background-color: #2a9d8f;
+    color: aliceblue;
+    padding-left: 1rem;
+}
+
+h3 {
+    color: #264653;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+h3::before {
+    content: "◆";
+}
+
+/* h3::after {
+    content: "】";
+} */
+
+section {
+    box-shadow: 0 0 10px 0;
+
+}
+
+
+section>section {
+    box-shadow: none;
+}
+
+section p {
+    padding: 0rem 1rem 0.1rem 1rem;
+}

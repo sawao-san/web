@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bootstrapについて</title>
+</head>
+
+<body>
+    <h1>Bootstrapについて</h1>
+    <section>
+        <h2>Bootstrapとは</h2>
+        <p>
+            <a href="https://getbootstrap.jp/docs/4.5/getting-started/introduction/">こちら</a>
+            がBootstrapの日本語リファレンス
+            <br>
+            ちなみにこのセクションにはBootstrapのクラスを使っていない
+        </p>
+    </section>
+
+    <section class="container-md">
+        <h2>Bootstrapの実験</h2>
+        <p style="border-bottom: 0.5px solid gray;">
+            こちらのセクションにはBootstrapのcontainerクラスを使用してみた。
+            <br>
+            containerには種類があって、詳しくは<a href="https://getbootstrap.jp/docs/4.5/layout/overview/">こちら</a>
+            に記載されている
+        </p>
+        <p>
+            グリッドシステムを使うには必須らしい
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quisquam voluptatibus sit! Voluptatibus
+            delectus repudiandae magni natus obcaecati laudantium, sequi laboriosam harum iusto veritatis ad nemo quasi
+            dolor tempora facere.
+            Voluptates numquam quam tempora iste sed odio! Dolores molestias aliquam, ut adipisci consectetur vero
+            consequatur! Ipsam molestiae voluptatum eos ut recusandae, beatae totam vel hic omnis, labore nostrum ex
+            non!
+        </p>
+    </section>
+
+    <section class="container">
+        <h2>ボタンのテスト</h2>
+        <p>
+            良い感じのボタンが簡単に使えるようになる
+            <br>
+            重要なのは、色ではない。primary等がどの色なのかを見てクラスを決めるのではなくて、色は差後で考えられるようにする
+            <a href="https://getbootstrap.jp/docs/4.5/components/buttons/">ボタンのページはこちら/</a>
+        </p>
+        <p>
+            <button type="button" class="btn btn-primary btn-lg">test</button>
+            <button type="button" class="btn btn-danger disabled">test</button>
+        </p>
+    </section>
+    <section class="container">
+        <h2 class="display-4">typographyについて</h2>
+        <p class="lead">
+            <a href="https://getbootstrap.jp/docs/4.5/content/typography/">こちら</a>に記載されているように、ヘッダーや文章の大きさを変更することができる
+        </p>
+
+        <blockquote class="blockquote">
+            こちらはblockquote要素です。
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate vero facilis, qui excepturi iure
+            quisquam laborum quos illum? Neque molestiae consequuntur tenetur quidem tempore vero repellat ipsum
+            consectetur illum. Explicabo?
+            <blockquote class="blockquote-footer">
+                引用先：○○
+            </blockquote>
+        </blockquote>
+    </section>
+
+    <section class="container-mg">
+        <h2>バッチとボタングループ<span class="badge badge-pill badge-warning">New</span></h2>
+
+        <h3>バッチ</h3>
+        <p>
+            <button type="button" class="btn btn-primary ">Updastes <span class="badge badge-light">9</span></button>
+        </p>
+
+        <h3>ボタングループ</h3>
+        <div class="btn-group">
+            <button type="button" class="btn btn-warning">One</button>
+            <button type="button" class="btn btn-warning">Two</button>
+            <button type="button" class="btn btn-warning">Three</button>
+        </div>
+
+        <h3>Alert</h3>
+        <p>
+            以下のように書けば、ユーザー操作によって消すことができるalertを表示することができる
+        </p>
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">警告</h4>
+            あなたにはアクションが許可されておりません。
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+
+
+    </section>
+
+    <section>
+        <h2>Grid Systemについて</h2>
+        <p>
+            Gridシステムはcontainerクラス内にrowクラスを作ると利用することができる。
+            <br>
+            rowを使うと12個のスペースが作られ、その中で幅を調整することで見た目をきれいにすることができる
+        </p>
+        <div class="container">
+            <h4 class="text-center text-primary display-4">The Grid System</h2>
+                <div class="row">
+                    <div class="col-4 text-white bg-danger text-center">私の幅は4</div>
+                    <div class="col-8 text-white bg-info text-center">私の幅は8</div>
+                </div>
+                <div class="row">
+                    <div class="col-3 text-white bg-danger text-center">私の幅は3</div>
+                    <div class="col-8 text-white bg-info text-center">私の幅は8</div>
+                </div>
+        </div>
+        <p>
+            別にcol-8のように記載しなくても、以下のようにクラスにcolだけ記載すれば、自動調整してくれる
+        </p>
+        <div class="container">
+            <div class="row">
+                <div class="col text-white bg-primary text-center">6/12</div>
+                <div class="col text-white bg-secondary text-center">6/12</div>
+            </div>
+            <div class="row">
+                <div class="col text-white bg-primary text-center">4/12</div>
+                <div class="col text-white bg-secondary text-center">4/12</div>
+                <div class="col text-white bg-warning text-center">4/12</div>
+            </div>
+        </div>
+
+        <h4 class="display-4 text-center">Responsible Grid</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xl-3 bg-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Excepturi, minima repellendus. Laudantium, molestiae consequuntur, ducimus ullam odio laborum velit
+                    dolores provident cupiditate sed fugit! At voluptates necessitatibus laboriosam enim quae.</div>
+                <div class="col-md-6 col-xl-3 bg-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Excepturi, minima repellendus. Laudantium, molestiae consequuntur, ducimus ullam odio laborum velit
+                    dolores provident cupiditate sed fugit! At voluptates necessitatibus laboriosam enim quae.</div>
+                <div class="col-md-6 col-xl-3 bg-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Excepturi, minima repellendus. Laudantium, molestiae consequuntur, ducimus ullam odio laborum velit
+                    dolores provident cupiditate sed fugit! At voluptates necessitatibus laboriosam enim quae.</div>
+                <div class="col-md-6 col-xl-3 bg-success">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Excepturi, minima repellendus. Laudantium, molestiae consequuntur, ducimus ullam odio laborum velit
+                    dolores provident cupiditate sed fugit! At voluptates necessitatibus laboriosam enim quae.</div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section>
+        <h2>img-fluid</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xl-4">
+                    <img src="picture/black_coffee.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6 col-xl-4">
+                    <img src="picture/おじさんとビール.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6 col-xl-4">
+                    <img src="picture/sunset.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
