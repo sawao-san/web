@@ -478,7 +478,7 @@ const Users = [
 ];
 
 const goodUsers = Users.filter(user => user.score >= 60);
-const goodUsers = Users.filter(({ score }) => score >= 60);
+// const goodUsers = Users.filter(({ score }) => score >= 60);
 
 
 
