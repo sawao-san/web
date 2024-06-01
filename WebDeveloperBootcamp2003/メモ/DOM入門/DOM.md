@@ -290,6 +290,7 @@ p.append("あああああああ", "いいいいいいい")
 
 #### insertAdjacentElement
 
+
 要素と要素の間に、要素を追加することができる。
 一つ目の引数で、どの位置に追加するのを指定する。
 
@@ -344,4 +345,212 @@ firstLi.parentElement.removeChild(firstLi); //このようにも書けるが、�
 ```javascript
 const firstLi = document.querySelector("li");   //消したい対象
 firstLi.remove();
+```
+
+
+## DOM EVENT
+
+### イベントの実行方法
+
+#### インラインイベント
+
+例えば、ボタンをクリックしたときにアラートを出したい場合は、以下のように記載することができる。
+
+onclickのようにアクションに対応する属性を要素に追加し、Javascriptを値として記載する
+```html
+<button onclick="alert('こちらはテストです')">Click</button>
+```
+
+このように記載すると、読みづらくなってくる。
+
+
+#### 属性に関数を割り当てて、実行する方法
+
+まず、以下のようにIDを振っておく
+```HTML
+<button id="v2">Click</button>
+```
+
+以下のように記載すれば、関数を割り当てることができる。
+
+```javascript
+const btn = document.querySelector("#v2");
+
+btn.onclick = () => {
+    console.log("クリックした");
+    console.log("ほげほげ");
+}
+```
+
+ただし、この方法だと、ひとつのイベントに対して、ひとつの関数しか設定できない。
+
+#### addEventListenter（正しい書き方）
+
+イベントの種類と、実行するコールバック関数を指定
+イベントは以下のページから選ぶ
+https://developer.mozilla.org/ja/docs/Web/Events#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%81%AE%E4%B8%80%E8%A6%A7
+
+```javascript
+button.addEventListener( 実行条件,　関数 );
+
+btn.addEventListener("click", scream);
+btn.addEventListener("click", scream, {once: true});  //一回しか実行されない
+
+```
+
+### Key Event
+
+EventListenerでは、入力方法を具体的に指示することができ、
+第二引数に設定する関数には、イベントを引数として渡すことができる。
+
+```javascript
+//keydownが押したとき、keyupはキーを押してから話したとき
+input.addEventListener("keyup", function () {
+    const log = document.createElement("p");
+    log.innerText = "keyup";
+    keyEventResult.appendChild(log);
+})
+
+//eventを引数として渡せる。keyは実際に入力した内容で、codeはどの位置のキーを入力したか
+input.addEventListener("keydown", function (e) {
+    const log = document.createElement("p");
+    log.innerText = `key : ${e.key}\ncode : ${e.code}`;
+    keyEventResult.appendChild(log);
+})
+```
+
+英字配列と日本語配列で、codeが違うので、ここで表示すること
+
+### フォームイベント
+
+#### preventDefault
+
+デフォルトの挙動を妨げる処理。
+
+例えば、以下のようなHTMLがあったとする
+(Bootstrapで書いたHTML)
+```html
+<section class="container">
+        <h2>FORM</h2>
+        <form id="tweetForm" action="/hoge">
+            <div class="form-group">
+                <label for="username">ユーザー名 </label>
+                <input class="form-control" type="text" name="username" placeholder="ユーザー名">
+
+            </div>
+            <div class="form-group">
+                <label for="tweet">文章 </label>
+
+                <input class="form-control" type="text" name="tweet" placeholder="いまどうしている？">
+
+            </div>
+
+            <button id="tweetButton" class="btn btn-primary">ツイートする</button>
+        </form>
+    </section>
+```
+
+上記のように書いた場合、フォームのアクションによって、URLが書き換えられてページを繊維されてしまう。
+
+そこで、以下のようにpreventDefaultを使えば、ウェブページが遷移されることを回避することができる。
+
+```javascript
+const tweetForm = document.querySelector("#tweetForm");
+tweetForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("submit!!!");
+})
+```
+
+#### elementsプロパティ
+
+フォームの要素の中にはelements要素があって、
+フォーム内の要素のname属性の値を使って、各要素にアクセスすることができる。
+
+```javascript
+const tweetForm = document.querySelector("#tweetForm");
+tweetForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    showLog(tweetForm.elements.username.value);
+    showLog(tweetForm.elements.tweet.value);
+})
+```
+
+ちなみに、addEventListenerで"click"ではなく、"submit"にしておけば、
+エンターキーを押したときに、実行されるようになる。
+
+### InputとChangeイベント
+
+テキスト入力欄でのChangeイベントは、テキストが変わった時にChangeイベントが発火するのではなく、
+カーソルが消えたとき（ほかの何かをクリックしたとき）に発火する。
+
+
+何か入力されたときには、以下のようにinputを指定する。
+```javascript
+tweetForm.addEventListener("input", e => {
+    showLog(usernameInput.value);
+})
+```
+
+### バブリング
+仮に以下のように書いて、ボタンをクリックしたら
+イベントが親要素に伝達されるため、3回アラートが表示される。
+親要素にイベントが伝達されることをバブリングという。
+
+```javascript
+<div onclick="alert('divクリック')" class="row">
+    <p onclick="alert('段落クリック')">
+      <button onclick="alert('ボタンクリック')" class="col-2 btn btn-info" id="testButton">テスト</button>
+    </p>   
+</div>
+```
+
+#### バブリング対策
+
+バブリングさせたくないイベントの関数の中で、e.stopPropagation()を記載するだけ
+
+
+### イベントデリゲーション
+
+例えば、あるlistをアイテムごとにクリックしたときに、クリックされたアイテムを削除するイベントを定義する。
+```javascript
+//delete
+const  lis = document.querySelectorAll('li');
+for(let li of lis){
+    li.addEventListener('click', function() {
+        li.remove();
+    })
+}
+```
+
+すると、残念ながら、新しくリストに追加されたアイテムは削除されない
+
+そこで、親要素に対してaddEventListenerを使う
+以下のように親要素はul
+
+```html
+  <ul id="tweets">
+      <li>Li!!!!!!!!</li>
+      <li>Li!!!!!!!!</li>
+  </ul>
+```
+
+そこでulに対して、Eventを追加し、liオブジェクトをクリックしてみると**e.target＝li**となる
+```javascript
+const tweetsContainer = document.querySelector("#tweets");
+tweetsContainer.addEventListener('click', function (e) {
+    console.log(e)
+})
+```
+
+この性質を使って以下のように記載する
+
+```javascript
+tweetsContainer.addEventListener('click', function (e) {
+    if (e.target.nodename === 'Li') {
+        e.target.remove();
+    }
+    // e.target.nodename === 'li' && e.target.remove(); //同じ意味
+})
 ```

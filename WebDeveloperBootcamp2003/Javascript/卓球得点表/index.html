@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-3by2">
+                                <img id="topImage" src="images/Takkyu.jpg" alt="">
+                            </figure>
+                        </div>
+                        <header class="card-header">
+                            <p class="card-header-title">卓球得点表</p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </header>
+
+
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="scoresTable">
+                                    <h1 class="title is-1">
+                                        <span id="p1Score"></span>
+                                        <span id="vs">対</span>
+                                        <span id="p2Score"></span>
+                                    </h1>
+                                </div>
+                                <p class="subtitle">
+                                    下のボタンを押して得点を管理しよう
+                                </p>
+                                <div class="select is-rounded">
+                                    <label id="pointLabel" for="points" class="label is-large is-inline">何点先取</label>
+                                    <select name="points" id="points" class="is-inline">
+                                        <!-- <option value="1">1</option> -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <button id="player1Button" class="is-primary button card-footer-item">+1
+                                プレイヤー1</button>
+                            <button id="player2Button" class="is-info button card-footer-item">+1
+                                プレイヤー2</button>
+                            <button id="resetButton" class="is-danger button card-footer-item">リセット</button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

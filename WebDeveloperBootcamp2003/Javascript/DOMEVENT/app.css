@@ -1,0 +1,36 @@
+h1 {
+    background-color: #560bad;
+    margin: 0;
+    padding: 0.5rem;
+    text-align: center;
+    color: #e7ecef;
+}
+
+h2 {
+    background-color: #7209b7;
+
+    padding: 0.5rem;
+
+    color: #e7ecef;
+}
+
+section {
+    box-shadow: 0 0 5px 0;
+    padding-bottom: 1rem;
+}
+
+.logResult p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 1rem;
+}
+
+.logResult {
+    background-color: honeydew;
+}
+
+.logResult::before {
+    content: "log result:";
+}
