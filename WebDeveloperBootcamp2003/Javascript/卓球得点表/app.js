@@ -37,7 +37,9 @@ function addScore1(e) {
             if (currentScore1 === endPoint) {
                 isGameOver = true;
                 p1Score.classList.add('has-text-success');
-                p2Score.classList.add('has-text-dsanger');
+                p2Score.classList.add('has-text-danger');
+
+                p1
             }
         }
     }
@@ -56,7 +58,7 @@ function addScore2(e) {
             if (currentScore2 === endPoint) {
                 isGameOver = true;
                 p2Score.classList.add('has-text-success');
-                p1Score.classList.add('has-text-dsanger');
+                p1Score.classList.add('has-text-danger');
             }
         }
     }
@@ -76,8 +78,8 @@ function reset() {
     p2Score.innerText = currentScore2;
 
 
-    p1Score.classList.remove('has-text-success', 'has-text-dsanger');
-    p2Score.classList.remove('has-text-success', 'has-text-dsanger');
+    p1Score.classList.remove('has-text-success', 'has-text-danger');
+    p2Score.classList.remove('has-text-success', 'has-text-danger');
 }
 
 window.addEventListener("keyup", function (e) {
