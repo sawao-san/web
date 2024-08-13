@@ -1,19 +1,31 @@
 h1 {
-    background-color: #560bad;
-    margin: 1rem 0;
-    padding: 0.5rem;
+
     text-align: center;
-    color: #e7ecef;
+    background-color: #3C4063;
+    color: #faf9f8;
+    font-weight: 700;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2em calc(50% - 457px + 2em);
+    width: 100%;
+    margin: 0;
+    /* margin-bottom: 1rem; */
+    padding: 0.2rem 1rem;
+    position: relative;
+    top: 0px;
 }
 
 h2 {
     /* background-color: #7209b7; */
     padding: 0.5rem;
-    color: #7209b7;
+    color: #3C4063;
+    border-bottom: #9BA2A8 solid 1px;
+
 }
 
 
 section.container {
+    margin-top: 1rem;
     box-shadow: 0 0 5px 0;
 
     padding: 0;
@@ -51,4 +63,9 @@ div {
 .logResult::before {
     content: "log result:";
 
+}
+
+img {
+    box-shadow: 0 0 1px 0;
+    margin: 1px;
 }
