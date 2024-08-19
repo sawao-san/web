@@ -65,10 +65,45 @@ const sing = async () => {
 
 ### asyncとawaitとfetchを使ったAPIの呼び方
 
+以下のように綺麗に書くことができる
 ```javascript
-const loadStarWarsPeople = async () => {
+    const loadStarWarsPeople = async () => {
     const res = await fetch('https://swapi.dev/api/people/1/');
     const data = await res.json();
     console.log(data);
 }
+```
+
+### AXIOS
+
+これは外部のライブラリ
+Githubを使って、以下のようにCDNでインポートすることができる
+
+```javascript
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+```
+
+以下のように書けば、レスポンスを得られるうえに、fetchと違って、Jsonが入っている
+
+```javascript
+    axios.get('https://swapi.dev/api/people/1/')
+    .then((result) => {
+        console.log("Resolve", result);
+
+    }).catch((err) => {
+        console.log("Reject", err);
+    });
+```
+
+## APIを使ったウェブサイト作成
+
+### Form作成
+
+以下の書き方は覚えておくこと。
+preventDefaultを書かないと、ページが遷移されてしまうので注意
+```javascript
+form.addEventListener('submit', function(e){
+    e.preventDefault(); //formでリクエストを投げるのを止める
+
+})
 ```
