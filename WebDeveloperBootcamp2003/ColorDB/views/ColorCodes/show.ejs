@@ -1,0 +1,51 @@
+<%- include('../partials/head') %>
+
+<div class="container">
+
+  <h2>Color Details</h2>
+  <div class="d-flex justify-content-end">ID: <%= colorCode.id %></div>
+
+  <div class="mb-3 row">
+    <label for="colorCode" class="col-sm-2 col-form-label">Color Code:</label>
+    <div class="col-5">
+      <%= colorCode.code %>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="colorName" class="col-sm-2 col-form-label">Color Name:</label>
+    <div class="col-sm-5">
+      <%= colorCode.name %>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="status" class="col-sm-2 col-form-label">Status:</label>
+    <div class="col-sm-5">
+      <%= colorCode.status %>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="creator" class="col-sm-2 col-form-label">Creator:</label>
+    <div class="col-sm-5">
+      <%= colorCode.creator %>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="updated" class="col-sm-2 col-form-label">Date:</label>
+    <div class="col-sm-5">
+      <%= colorCode.updated %>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="comment" class="col-sm-2 col-form-label">Comment:</label>
+    <div class="col-sm-5">
+      <%= colorCode.comment %>
+    </div>
+
+  </div>
+  <div class="d-flex justify-content-end">
+    <a href="/ColorCodes/<%= colorCode.id %>/edit" class="btn btn-danger">編集</a>
+  </div>
+
+</div>
+
+<%- include('../partials/footer') %>

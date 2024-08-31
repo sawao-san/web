@@ -1,0 +1,29 @@
+<%- include('../partials/head') %>
+
+<div class="container">
+  <h2>ColorCode一覧表示</h2>
+  <table class="table">
+    <thead>
+      <th>status</th>
+      <th>Color Code</th>
+      <th>Color Name</th>
+      <th>Last updated</th>
+      <th>by</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% for(colorCode of colorCodes){ %>
+      <tr>
+        <td><%= colorCode.status %></td>
+        <td><b><%= colorCode.code %></b></td>
+        <td><%= colorCode.name %></td>
+        <td><%= colorCode.updated %></td>
+        <td><%= colorCode.creator %></td>
+        <td><a href="/ColorCodes/<%= colorCode.id %>" class="btn btn-outline-primary">詳細</a></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../partials/footer') %>

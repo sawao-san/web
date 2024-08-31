@@ -1,0 +1,56 @@
+<%- include('../partials/head') %>
+
+
+<form class="container" method="POST" action="/ColorCodes">
+  <h2>Create new color</h2>
+
+  <div class="mb-3 row">
+    <label for="colorCode" class="col-sm-2 col-form-label">Color Code:</label>
+    <div class="col-5">
+      <input name="code" type="text" class="form-control" id="colorCode" placeholder="ex:B-24">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="colorName" class="col-sm-2 col-form-label">Color Name:</label>
+    <div class="col-sm-5">
+      <input name="name" type="text" class="form-control" id="colorName">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="status" class="col-sm-2 col-form-label">Status:</label>
+    <div class="col-sm-5">
+      <select name="status" class="form-select">
+        <option value="Development" selected>Development</option>
+        <option value="Approved">Approved</option>
+        <option value="Mastered">Mastered</option>
+      </select>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="creator" class="col-sm-2 col-form-label">Creator:</label>
+    <div class="col-sm-5">
+      <input name="creator" type="text" class="form-control" id="creator">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="updated" class="col-sm-2 col-form-label">Date:</label>
+    <div class="col-sm-5">
+      <input name="updated" type="text" class="form-control" id="updated">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="comment" class="col-sm-2 col-form-label">Comment:</label>
+    <div class="col-sm-5">
+      <textarea name="comment" id="comment" class="form-control" rows="5"></textarea>
+    </div>
+
+  </div>
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-danger">登録</button>
+  </div>
+
+
+</form>
+
+
+<%- include('../partials/footer') %>
