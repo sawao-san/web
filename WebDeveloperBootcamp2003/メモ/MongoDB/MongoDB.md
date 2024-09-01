@@ -432,3 +432,18 @@ Movie.updateMany({ title: { $in: ['Amadeus', 'Stand By Me'] } }, { score: 10 })
         console.log(err);
     })
 ```
+
+あるデータを更新し、結果を返したいなら
+```javascript
+Movie.findOneAndUpdate({ title: 'The Iron Gian' }, { title: 'The Iron Giant' }, {new: true})
+    .then(m => {
+        console.log(m);
+    })
+    .catch(err => {
+        console.log('findできませんでした');
+        console.log(err);
+    })
+```
+
+#### データを削除する
+
