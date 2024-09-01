@@ -331,7 +331,7 @@ Mongooseは、アプリケーションのデータをモデル化して、スキ
 
 リレーションのあるデータベースだとORMを使う
 
-### 使い方
+### 接続方法
 
 接続方法
 https://mongoosejs.com/
@@ -352,3 +352,83 @@ kitty.save().then(() => console.log('meow'));
 mongodbのconnectは
 mongoshコマンドを実行し、connecting toの項目で見ることができる
 ![alt text](image-16.png)
+
+### 使い方
+
+Modelというクラスを利用していく
+https://mongoosejs.com/docs/models.html
+
+まずは、スキーマの定義とインスタンスの生成
+(Movie用のクラスを作成する際に、第一引数の'Model'はものすごく重要で、一文字目は大文字にする必要があり、Mongoose側の処理で、moviesという名称のコネクションを作ることになる)
+
+```javascript
+//スキーマ定義
+const movieSchema = new mongoose.Schema({
+    title: String,
+    year: Number,
+    score: Number,
+    rating: String
+});
+
+const Movie = mongoose.model('Model', movieSchema); //Movie用のクラス作成
+
+const amadeus = new Movie({title: 'Amadeus', year: 1986, score: 9.2, rating: 'R'})
+```
+
+ただ、上記の処理を実行しても、MongoDBにデータを作るわけではない。
+
+```javascript
+amadeus.save();
+```
+でようやくMongoDBに反映される
+
+#### データを参照する
+
+全データを見つけたいなら以下の書き方
+```javascript
+Movie.find()
+    .then(data => {
+        console.log(data);
+    })
+    .catch(err => {
+        console.log('findできませんでした');
+        console.log(err);
+    })
+```
+
+IDによってデータを見つけたいのであれば以下の書き方
+```javascript
+Movie.findById('66d43e6561c56567de2e0573')
+    .then(data => {
+        console.log(data);
+    })
+    .catch(err => {
+        console.log('findできませんでした');
+        console.log(err);
+    })
+```
+
+#### データを更新する
+
+```javascript
+Movie.updateOne({ title: 'Amadeus' }, { year: 1800 })
+    .then(res => {
+        console.log(res);
+    })
+    .catch(err => {
+        console.log('updateできませんでした');
+        console.log(err);
+    })
+```
+
+複数のデータを更新する場合には以下のように記載する
+```javascript
+Movie.updateMany({ title: { $in: ['Amadeus', 'Stand By Me'] } }, { score: 10 })
+    .then(res => {
+        console.log(res);
+    })
+    .catch(err => {
+        console.log('updateできませんでした');
+        console.log(err);
+    })
+```
