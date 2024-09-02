@@ -73,11 +73,14 @@ const Movie = mongoose.model('Movie', movieSchema); //Movie用のクラス作成
 //         console.log(err);
 //     })
 
-Movie.findOneAndUpdate({ title: 'The Iron Gian' }, { title: 'The Iron Giant' })
-    .then(m => {
-        console.log(m);
-    })
-    .catch(err => {
-        console.log('findできませんでした');
-        console.log(err);
-    })
+// Movie.findOneAndUpdate({ title: 'The Iron Gian' }, { title: 'The Iron Giant' })
+//     .then(m => {
+//         console.log(m);
+//     })
+//     .catch(err => {
+//         console.log('findできませんでした');
+//         console.log(err);
+//     })
+
+Movie.findOneAndDelete({ title: 'Alien' })
+    .then(m => console.log(m));

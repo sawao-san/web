@@ -447,3 +447,82 @@ Movie.findOneAndUpdate({ title: 'The Iron Gian' }, { title: 'The Iron Giant' }, 
 
 #### データを削除する
 
+```javascript
+Movie.findOneAndDelete({ title: 'Alien' })
+    .then(m => console.log(m));
+```
+
+### Mongooseのスキーマ
+
+https://mongoosejs.com/docs/schematypes.html
+
+スキーマでは、定義されている情報のみ扱えるように設定することができ、上記でもすでに書き方は記載しているが、
+さらに細かい定義もできる
+
+https://mongoosejs.com/docs/schematypes.html
+
+```javascript
+const productSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,  //必ずオブジェクトに存在しなければならない
+        maxLength: 10
+    },
+    price: {
+        type: Number,
+        require: true,
+        min: 0
+    },
+    onSale: {
+        type: Boolean,
+        default: false
+    },
+    categories: [String],
+    qty: {
+        online: {
+            type: Number,
+            default: 0
+        },
+        inStore: {
+            type: Number,
+            default: 0
+        }
+    }
+});
+```
+
+#### スキーマの落とし穴
+
+デフォルトの設定で、更新実行すると、スキーマの定義を無視したデータでも更新することができる
+なので、
+https://mongoosejs.com/docs/api/model.html#Model.findOneAndUpdate()
+
+```javascript
+Product.findOneAndUpdate({ name: 'マウンテンバイク' }, { price: -1900 }, {new: true, runValidators: true} )
+    .then(data => {
+        console.log('成功');
+        console.log(data);
+    })
+    .catch(err => {
+        console.log('失敗');
+        console.log(err);
+    })
+```
+
+#### validationのエラーメッセージ
+
+```javascript
+const productSchema = new mongoose.Schema({
+    price: {
+        type: Number,
+        require: true,
+        min: [0, 'priceは0より大きい値にしてください']  //配列の二つ目の値として、文字列を書いておけばエラーメッセージを設定することができる
+    }
+});
+
+```
+
+### モデルのインスタンスメソッド
+
+自分専用のメソッドを作ることができる
+
