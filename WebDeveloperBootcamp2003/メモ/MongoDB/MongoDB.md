@@ -382,6 +382,40 @@ amadeus.save();
 ```
 でようやくMongoDBに反映される
 
+#### データを作成する
+
+インスタンスを生成し、saveしてもデータは追加されるが以下のようにCreateを使ってもデータを追加できた
+```javascript
+Product.create({
+    name: "ヘルメット",
+    price: 2980,
+    categories: ['Sports', 'Safety'],
+    qty: {
+        online: 3,
+        inStore: 2
+    }
+}).then(data => {
+    console.log(data);
+}).catch(err => {
+    console.Console(err);
+})
+```
+
+もしくは、複数のデータを入力したいなら以下のように書く
+```javascript
+Movie.insertMany([
+    { title: 'Amelie', year: 2001, score: 8.3, rating: 'R' },
+    { title: 'Alien', year: 1979, score: 8.1, rating: 'R' },
+    { title: 'The Iron Gian', year: 1999, score: 7.5, rating: 'PG' },
+    { title: 'Stand By Me', year: 1986, score: 8.6, rating: 'R' },
+    { title: 'Moonrise Kingdom', year: 2012, score: 7.3, rating: 'PG-13' }
+]).then(data => {
+    console.log('成功！！！');
+    console.log(data);
+})
+```
+
+
 #### データを参照する
 
 全データを見つけたいなら以下の書き方
@@ -526,3 +560,84 @@ const productSchema = new mongoose.Schema({
 
 自分専用のメソッドを作ることができる
 
+```javascript
+//　インスタンスメソッドの生成
+productSchema.methods.greet = function () {
+    console.log('ハロー！！やっほー！！');
+    console.log(` - ${this.name}からの呼び出しです`);
+}
+
+//インスタンスの生成
+const Product = mongoose.model('Product', productSchema);
+
+// インスタンスの呼び出し例
+const findProduct = async () => {
+    const foundProduct = await Product.findOne({ name: 'マウンテンバイク' });
+    foundProduct.greet();
+
+}
+
+
+findProduct();
+```
+
+### モデルのスタティックメソッド
+
+Modelというクラス自身にメソッドを追加する
+
+```javascript
+// スタティックメソッドの追加
+productSchema.statics.fireSale = function () {
+    return this.updateMany({}, { onSale: true, price: 0 });
+}
+
+//スタティックメソッドの呼び出し
+Product.fireSale().then(msg => console.log(msg));
+
+```
+
+### virtual
+
+仮想のプロパティを設定することができるメソッド
+仮想のプロパティは実際のDBのスキーマには存在しない
+
+```javascript
+
+//スキーマの定義
+const personSchema = new mongoose.Schema({
+    first:String,
+    last:String
+})
+
+// 仮想のプロパティの設定
+personSchema.virtual('fullName').get(function () {
+    return `${this.first} ${this.last}`;
+})
+
+const Person = mongoose.model('Person', personSchema);
+
+const test = async function () {
+    const yamada = await Person.findOne({ last: 'Yamada' });   
+    console.log(yamada.fullName);
+}
+
+test(); //Taro Yamada
+
+```
+
+
+### ミドルウェア
+
+https://mongoosejs.com/docs/middleware.html
+
+mongooseのsave等の上記ページで記載されているメソッドの処理の前後に行う処理を定義することができる
+
+```javascript
+personSchema.pre('save', async function() {
+    console.log('今から保存するよ')
+})
+
+personSchema.post('save', async function() {
+    console.log('保存が終わったよ')
+})
+```

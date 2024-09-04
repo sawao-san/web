@@ -38,11 +38,7 @@ const productSchema = new mongoose.Schema({
     }
 });
 
-productSchema.methods.greet = function () {
-    console.log('ハロー！！やっほー！！')
-}
 
-const Product = mongoose.model('Product', productSchema);
 
 // const bike = new Product({
 //     name: 'マウンテンバイク',
@@ -69,3 +65,62 @@ const Product = mongoose.model('Product', productSchema);
 //         console.log(err);
 //     })
 
+productSchema.methods.greet = function () {
+    console.log('ハロー！！やっほー！！');
+    console.log(` - ${this.name}からの呼び出しです`);
+}
+
+productSchema.methods.toggleOnSale = function () {
+    this.onSale = !this.onSale;
+    return this.save();
+}
+
+productSchema.methods.addCategory = function (newCat) {
+    this.categories.push(newCat);
+    return this.save();
+}
+
+productSchema.statics.fireSale = function () {
+    return this.updateMany({}, { onSale: true, price: 0 });
+}
+
+const Product = mongoose.model('Product', productSchema);
+
+// const findProduct = async () => {
+//     const foundProduct = await Product.findOne({ name: 'マウンテンバイク' });
+//     console.log(foundProduct);
+//     await foundProduct.toggleOnSale();
+//     console.log(foundProduct);
+
+//     // await foundProduct.addCategory('アウトドア')
+
+// }
+
+
+// findProduct();
+
+// Product.find()
+//     .then(data => {
+//         console.log(data);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     })
+
+Product.fireSale().then(msg => console.log(msg));
+
+Product.find()
+    .then(data => {
+        console.log(data);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+personSchema.pre('save', async function () {
+    console.log('今から保存するよ')
+})
+
+personSchema.post('save', async function () {
+    console.log('保存が終わったよ')
+})
