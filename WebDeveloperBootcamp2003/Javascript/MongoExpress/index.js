@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 
 const Product = require('./models/product');
 
-mongoose.connect('mongodb://127.0.0.1:27017/farmStand')
+mongoose.connect('mongodb://127.0.0.1:27017/farmStand2')
     .then(() => {
         console.log("MongoDB コネクションOK");
     })
